@@ -5,6 +5,9 @@ title: SEA7 Aerospace
 author: ''
 logo: logo.png
 
+# Auto-exclude files not in the toc
+only_build_toc_files: true
+
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: cache
@@ -27,4 +30,8 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_repository_button: true
-  use_edit_page_button: true
+  use_edit_page_button: false
+  use_issues_button: true
+  extra_navbar: ""
+  extra_footer: ""
+  baseurl: "https://sea7aero.space/"
