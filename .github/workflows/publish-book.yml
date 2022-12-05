@@ -1,0 +1,14 @@
+name: publish-jupyter-book
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+    - main
+    paths:
+    - book/**
+
+jobs:
+  publish:
+    uses: sea7aero/theme/.github/workflows/publish-jupyter-book.yml@main
+
