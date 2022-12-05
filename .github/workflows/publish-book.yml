@@ -39,12 +39,12 @@ jobs:
       run: poetry install --no-interaction
 
     - name: Build the jupyter-book html output
-      run: make book
+      run: make docs
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
-        path: _build/html
+        path: docs/_build/html
 
   deploy:
     needs: build

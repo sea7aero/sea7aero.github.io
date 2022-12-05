@@ -6,5 +6,5 @@ root: intro
 parts:
   - caption: Sprite 1
     chapters:
-    - file: projects/sprite-1/docs/index
-    - file: projects/sprite-1/docs/mission-plan
+    - file: sprite-1/index
+    - file: sprite-1/mission-plan

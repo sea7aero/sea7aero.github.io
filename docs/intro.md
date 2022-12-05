@@ -12,7 +12,7 @@ SEA7 Aerospace is an amateur aerospace "company" located in Seattle.
 
     Our second high altitude balloon project. This time, we successfully filmed the entire mission and retrieved the payload safely.
 
-1. [Sprite 1](projects/sprite-1/docs/index) - "Operation Whale Drop"
+1. [Sprite 1](sprite-1/index) - "Operation Whale Drop"
 
     Our third, planned, balloon project.  This time with using a RC plane as the payload, with the intention of flying back to the launch site.
 

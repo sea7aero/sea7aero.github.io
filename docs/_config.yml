@@ -44,3 +44,4 @@ html:
   extra_navbar: ""
   extra_footer: ""
   baseurl: "https://sea7aero.space/"
+  google_analytics_id: "G-1K2EMLZCY0"

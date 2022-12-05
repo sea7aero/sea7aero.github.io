@@ -8,6 +8,6 @@ Changes to the book are automatically published when the `main` branch is pushed
 
 ```
 make install
-make book
+make docs
 ```
 

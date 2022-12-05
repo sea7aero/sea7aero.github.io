@@ -1,6 +1,6 @@
-.PHONY: help install book runall clean
+.PHONY: help install docs open runall clean
 
-BOOK_PATH=.
+BOOK_PATH=docs
 JB=poetry run jupyter-book
 
 help:
@@ -15,8 +15,11 @@ install:
 clean:
 	$(JB) clean --all $(BOOK_PATH)
 
-book:
+docs:
 	$(JB) build -W --keep-going $(BOOK_PATH)
+
+open:
+	open $(BOOK_PATH)/_build/html/index.html
 
 runall:
 	$(JB) run $(BOOK_PATH)
