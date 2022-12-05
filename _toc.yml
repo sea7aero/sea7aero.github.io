@@ -7,3 +7,4 @@ parts:
   - caption: Sprite 1
     chapters:
     - file: projects/sprite-1/docs/index
+    - file: projects/sprite-1/docs/mission-plan
