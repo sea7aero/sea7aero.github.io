@@ -4,6 +4,12 @@
 format: jb-book
 root: intro
 parts:
+  - caption: Graupel 2
+    chapters:
+    - file: graupel-2/index
+    - file: graupel-2/data-analysis
+    - file: graupel-2/flight-path
+    - file: graupel-2/extract-gopro
   - caption: Sprite 1
     chapters:
     - file: sprite-1/index
