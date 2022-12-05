@@ -1,4 +1,7 @@
-.PHONY: help install book runall
+.PHONY: help install book runall clean
+
+BOOK_PATH=.
+JB=poetry run jupyter-book
 
 help:
 	@echo "Please use 'make <target>' where <target> is one of:"
@@ -9,8 +12,11 @@ help:
 install:
 	poetry install
 
+clean:
+	$(JB) clean --all $(BOOK_PATH)
+
 book:
-	poetry run jupyter-book build .
+	$(JB) build -W --keep-going $(BOOK_PATH)
 
 runall:
-	poetry run jupyter-book run .
+	$(JB) run $(BOOK_PATH)
