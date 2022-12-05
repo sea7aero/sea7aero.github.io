@@ -22,10 +22,10 @@ jobs:
         installer-parallel: true
 
     - name: Install project
-      run: poetry install --no-interaction
+      run: make install
 
     - name: Build the book
-      run: ./build
+      run: make book
       
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
