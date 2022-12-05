@@ -1,0 +1,25 @@
+name: update-parent-repo
+# A shared workflow which can be called by one of the submodules when it is updated, triggering this repository
+# to update its submodules, build the website, and publish it.
+
+on: workflow_call
+
+jobs:
+  update-parent-repo:
+    runs-on: ubuntu-latest
+    - uses: actions/checkout@v2
+        with: 
+          repository: sea7aero/sea7aero.github.io
+          submodules: true
+
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+      - name: Commit
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions (${GITHUB_ACTOR})"
+          git add --all
+          git commit -m "Update submodules from ${GITHUB_REPOSITORY}" || echo "No changes to commit"
+          git push

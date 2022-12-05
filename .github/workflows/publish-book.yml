@@ -1,14 +1,48 @@
 name: publish-jupyter-book
 
-on:
-  workflow_dispatch: {}
-  push:
-    branches:
-    - main
-    paths:
-    - book/**
+on: workflow_call
 
 jobs:
-  publish:
-    uses: sea7aero/theme/.github/workflows/publish-jupyter-book.yml@main
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        installer-parallel: true
+
+    - name: Install project
+      run: poetry install --no-interaction
+
+    - name: Build the book
+      run: poetry run jupyter-book build .
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: _build/html
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
 

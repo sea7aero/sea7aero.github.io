@@ -7,8 +7,7 @@
 ```
 poetry install
 poetry shell
-poe build-book
-poe open
+jb build .
 ```
 
 Changes to the book are automatically published when the `main` branch is pushed.

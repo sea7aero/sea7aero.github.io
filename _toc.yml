@@ -3,3 +3,7 @@
 
 format: jb-book
 root: intro
+parts:
+  - caption: Sprite 1
+    chapters:
+    - file: projects/sprite-1/docs/index
