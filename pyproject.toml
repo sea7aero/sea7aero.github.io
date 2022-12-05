@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sea7aero"
+version = "1.0.0"
+description = "Source code for https://sea7aero.space/"
+authors = ["Jason Walker <ungood@onetrue.name>"]
+readme = "README.md"
+packages = []
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.group.dev.dependencies]
+jupyter-book = "^0.13.1"
+poethepoet = "^0.16.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+nb = "jupyter notebook book"
+jb = "jupyter-book"
+open = "open book/_build/html/index.html"
+build-book = "jupyter-book build book"
