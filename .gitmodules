@@ -1,4 +1,4 @@
 [submodule "projects/sprite-1"]
 	path = projects/sprite-1
-	url = https://github.com/sea7aero/sprite-1
+	url = git@github.com:sea7aero/sprite-1.git
 	branch = main

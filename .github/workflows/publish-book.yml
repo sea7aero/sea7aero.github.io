@@ -1,6 +1,6 @@
 name: publish-jupyter-book
 
-on: workflow_call
+on: [push, workflow_dispatch]
 
 jobs:
   build:

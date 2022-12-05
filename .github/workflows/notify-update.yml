@@ -7,7 +7,9 @@ on: workflow_call
 jobs:
   update-parent-repo:
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v2
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with: 
           repository: sea7aero/sea7aero.github.io
           submodules: true
