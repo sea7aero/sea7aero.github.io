@@ -16,7 +16,7 @@ clean:
 	$(JB) clean --all $(BOOK_PATH)
 
 docs:
-	$(JB) build -W --keep-going $(BOOK_PATH)
+	$(JB) build $(BOOK_PATH)
 
 open:
 	open $(BOOK_PATH)/_build/html/index.html
